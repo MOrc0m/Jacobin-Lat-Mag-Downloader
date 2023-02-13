@@ -21,8 +21,8 @@ print('URL:', URL)
 
 # Requesting the crafted url / Peticion http de la url obtenida
 
-R=requests.get(URL)
-CODE=R.status_code
+RQT=requests.get(URL)
+CODE=RQT.status_code
 
 # Write the directory  you want to save at / Eleccion de directorio de descarga
 
@@ -40,7 +40,7 @@ if CODE == 200:
     if not os.path.exists(DIR):
         os.makedirs(DIR)
     pdf = open(DIR + '/' + 'jacobin' + NMB + '.pdf', 'wb')
-    pdf.write(R.content)
+    pdf.write(RQT.content)
     pdf.close()
     print("Archivo descargado / File downloaded")
 else:       
