@@ -2,24 +2,24 @@
 import os
 import requests
 
-# saving url constants for magazine's url / partes fijas de la url
+# saving url constants for magazine's url / Partes fijas de la url
 
 URL_1='https://jacobinlat.com/wp-content/uploads'
 URL_2='revista-Jacobin_No'
 URL_3='_ed-digital.pdf'
 
-# User's input for url's variable parts / input de usuario para partes variables de la url
+# User's input for url's variable parts / Input de usuario para partes variables de la url
 
 YEAR=input("ingrese año de edicion / input edition's year: ")
 MONTH=input("ingrese mes de edicion / input edition's  month: ")
 NMB=input("Ingrese numero de edicion/ input edition's number: ")
 
-# String concatenation for url crafting / concatenacion para formar la url final.
+# String concatenation for url crafting / Concatenacion para formar la url final.
 
 URL= URL_1 + '/' + YEAR + '/' + MONTH + '/' + URL_2 + NMB + URL_3
 print('URL:', URL)
 
-# Requesting the crafted url / peticion http de la url obtenida
+# Requesting the crafted url / Peticion http de la url obtenida
 
 R=requests.get(URL)
 CODE=R.status_code
